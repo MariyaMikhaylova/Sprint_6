@@ -9,9 +9,7 @@ from pages.order_page import OrderPage
 def driver():
     firefox = webdriver.Firefox()
     firefox.maximize_window()
-
     yield firefox
-
     firefox.quit()
 
 
