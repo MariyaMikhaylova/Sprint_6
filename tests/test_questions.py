@@ -2,6 +2,8 @@ import allure
 from locators.locators_main_page import LocatorsQuestionsAndAnswer
 import pytest
 
+from pages.main_page import MainPage
+
 
 class TestQuestions:
 
@@ -19,5 +21,6 @@ class TestQuestions:
                              ]
                              )
     def test_what_is_the_price(self, main_page, open_and_scroll_page, driver, question, answer, result):
+        main_page = MainPage(driver)
         main_page.expand_answer(question)
         assert main_page.wait_and_find_element(answer).text == result

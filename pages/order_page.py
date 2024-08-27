@@ -1,16 +1,8 @@
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-
 from pages.base_page import BasePage
 from locators.locators_order_page import OrderPageLocators
 
 
 class OrderPage(BasePage):
-
-    def click_button_next(self):
-        button = self.wait_and_find_element(OrderPageLocators.BUTTON_NEXT)
-        button.click()
-        WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located(OrderPageLocators.TITLE))
 
     def order_client_data_with_address(self):
         self.wait_and_find_element(OrderPageLocators.NAME).send_keys('Имя')
